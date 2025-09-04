@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import type { Recipe, RecipeRequest, MealPlan, MealPlanRequest, ShoppingList } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+export const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 const recipeSchema = {
   type: Type.OBJECT,
