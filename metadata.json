@@ -1,0 +1,7 @@
+{
+  "name": "AI Kitchen Assistant",
+  "description": "An AI-powered kitchen assistant that generates recipes from ingredients, creates personalized meal plans, and visualizes dishes with image generation.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
