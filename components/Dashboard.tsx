@@ -5,8 +5,9 @@ import { MealPlanner } from './MealPlanner';
 import { DishVisualizer } from './DishVisualizer';
 import { ProfilePage } from './ProfilePage';
 import { RecipeFinder } from './RecipeFinder';
+import { StudyHelper } from './StudyHelper';
 
-type View = 'recipe' | 'planner' | 'visualizer' | 'finder' | 'profile';
+type View = 'recipe' | 'planner' | 'visualizer' | 'finder' | 'study' | 'profile';
 
 export const Dashboard: React.FC = () => {
   const [activeView, setActiveView] = useState<View>('recipe');
@@ -37,6 +38,8 @@ export const Dashboard: React.FC = () => {
         return { title: 'Dish Visualizer', component: <DishVisualizer /> };
       case 'finder':
         return { title: 'Recipe Finder', component: <RecipeFinder /> };
+      case 'study':
+        return { title: 'Study Helper', component: <StudyHelper /> };
       case 'profile':
         return { title: 'User Profile', component: <ProfilePage /> };
       default:
@@ -62,7 +65,8 @@ export const Dashboard: React.FC = () => {
             <NavItem view="planner" label="Meal Planner" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" /></svg>} />
             <NavItem view="visualizer" label="Dish Visualizer" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" /></svg>} />
             <NavItem view="finder" label="Recipe Finder" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" /></svg>} />
-             <NavItem view="profile" label="Profile" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>} />
+            <NavItem view="study" label="Study Helper" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L9 9.61v5.07L4.618 12.39a1 1 0 00-1.236 1.236l5 2a1 1 0 001.236 0l5-2a1 1 0 00-1.236-1.236L11 14.68V9.61l6.606-2.69a1 1 0 000-1.84l-7-3zM9 11.42l-5-2V7.17l5 2v2.25zM11 11.42V9.17l5-2V7.42l-5 2v2z" /></svg>} />
+            <NavItem view="profile" label="Profile" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" /></svg>} />
         </nav>
         <div className="mt-auto">
              <div className="px-2 py-3 mb-2 border-t border-gray-200">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import { ai } from '../services/geminiService';
 import type { Chat } from "@google/genai";
 import type { Recipe } from '../types';
 import { Loader } from './Loader';
@@ -13,8 +13,6 @@ interface ChatMessage {
     role: 'user' | 'model';
     text: string;
 }
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
 
 export const CookingAssistant: React.FC<CookingAssistantProps> = ({ recipe, onClose }) => {
     const [chat, setChat] = useState<Chat | null>(null);
