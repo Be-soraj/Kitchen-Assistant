@@ -92,7 +92,7 @@ export const StudyHelper: React.FC = () => {
           ref={chatContainerRef}
           className="flex-1 p-4 overflow-y-auto h-96 space-y-4 bg-gray-50 rounded-lg border"
         >
-          {history.map((msg, index) => (
+          {history.map((msg: ChatMessage, index: number) => (
             <div
               key={index}
               className={`flex ${
